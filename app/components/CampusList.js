@@ -4,6 +4,10 @@ import { fetchingCampuses } from '../reducers/campusesReducer';
 import { connect } from 'react-redux';
 
 class CampusList extends Component {
+  componentDidMount() {
+    this.props.fetchingAllCampuses();
+  }
+
   render() {
     let campuses = this.props.campuses;
     return (
@@ -12,7 +16,10 @@ class CampusList extends Component {
         <ul>
           {campuses.map(campus => (
             <li key={campus.id}>
-              <Link to={`/campuses/${campus.id}`}>{`${campus.name}`}</Link>
+              <a href="#">
+                <img src={campus.imageUrl} />
+              </a>
+              <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
             </li>
           ))}
         </ul>
