@@ -41,8 +41,8 @@ const mapDispatchToProps = dispatch => {
 };
 
 const connectedCampusList = connect(
-  mapDispatchToProps,
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(CampusList);
 
 export default connectedCampusList;

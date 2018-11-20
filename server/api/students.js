@@ -11,4 +11,15 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/:studentId', async (req, res, next) => {
+  try {
+    const student = await Student.findById(req.params.studentId, {
+      include: [{ model: Campus }],
+    });
+    res.json(student);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

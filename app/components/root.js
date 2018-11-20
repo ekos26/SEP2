@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import StudentList from './StudentList';
+import connectedStudentList from './StudentList';
 import connectedCampusList from './CampusList';
 
 const Root = () => {
@@ -12,7 +12,7 @@ const Root = () => {
         <div>
           <Switch>
             <Route exact path="/campuses" component={connectedCampusList} />
-            {/* <Route exact path="/students" component={StudentList} /> */}
+            <Route exact path="/students" component={connectedStudentList} />
           </Switch>
         </div>
       </main>
