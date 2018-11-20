@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { fetchingCampuses } from '../reducers/campusesReducer';
 import { connect } from 'react-redux';
 
@@ -16,10 +16,9 @@ class CampusList extends Component {
         <ul>
           {campuses.map(campus => (
             <li key={campus.id}>
-              <a href="#">
-                <img src={campus.imageUrl} />
-              </a>
-              <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
+              <img src={campus.imageUrl} />
+
+              <NavLink to={`/campuses/${campus.id}`}>{campus.name}</NavLink>
             </li>
           ))}
         </ul>

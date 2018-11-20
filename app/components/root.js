@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import connectedStudentList from './StudentList';
 import connectedCampusList from './CampusList';
 
@@ -10,14 +10,14 @@ const Root = () => {
       <main>
         <h1>Welcome to the Margaret Hamilton Academy of JavaScript!</h1>
         <div>
-          <Switch>
-            <Route exact path="/campuses" component={connectedCampusList} />
-            <Route exact path="/students" component={connectedStudentList} />
-          </Switch>
+          {/* <Switch>
+            <Route path="/campuses" component={connectedCampusList} />
+            <Route path="/students" component={connectedStudentList} />
+          </Switch> */}
         </div>
       </main>
     </div>
   );
 };
 
-export default Root;
+export default withRouter(Root);
